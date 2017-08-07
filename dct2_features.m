@@ -16,7 +16,7 @@ for k = 1:length(pngFiles)
 	fullFileName = fullfile(currentDir, baseFileName);      %Construct the full file names of the files
 
     I=imread(fullFileName);
-%     I=imread('C:\File Transfer\WorkStation\Joshua Tree\The-Arch-Rock.jpg');
+%   should be something like:   I=imread('C:\File Transfer\WorkStation\Joshua Tree\The-Arch-Rock.jpg');
 
 I=imresize(I, [L L]);       %Resize the image
     I1=I;
@@ -29,7 +29,7 @@ I=imresize(I, [L L]);       %Resize the image
     M=size(I,1)/n;
     for i=1:M 
         for j=1:M
-            D(((i-1)*n+1):((i-1)*n+n),((j-1)*n+1):((j-1)*n+n)) = dct2(I(((i-1)*n+1):((i-1)*n+n),((j-1)*n+1):((j-1)*n+n)));
+            D(((i-1)*n+1):((i-1)*n+n),((j-1)*n+1):((j-1)*n+n)) = dct2(I(((i-1)*n+1):((i-1)*n+n),((j-1)*n+1):((j-1)*n+n))); % the most important part 
         end
     end
     
